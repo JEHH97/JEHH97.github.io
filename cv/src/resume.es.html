@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jesús Enrique Hernández Herrera — Full-Stack Developer (CV)</title>
+<style>
+  * { box-sizing: border-box; }
+  @page { size: A4; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #fff; }
+  body {
+    color: #1f2933;
+    font-family: Arial, "Liberation Sans", Helvetica, sans-serif;
+    font-size: 8.8pt;
+    line-height: 1.28;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a { color: #00796b; text-decoration: none; }
+  .page { width: 210mm; min-height: 297mm; padding: 10mm 14mm 8mm; }
+  header { border-bottom: 2.5px solid #00796b; padding-bottom: 6px; margin-bottom: 8px; }
+  h1 { margin: 0; font-size: 21pt; color: #0b3d38; letter-spacing: -0.2px; }
+  .role { margin: 2px 0 4px; font-size: 10.5pt; color: #00796b; font-weight: bold; }
+  .contact { font-size: 8.5pt; color: #3e4c59; }
+  .contact span + span::before { content: "  ·  "; color: #9aa5b1; }
+  h2 {
+    margin: 6px 0 2px;
+    font-size: 9.2pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00796b;
+    border-bottom: 1px solid #b2dfdb;
+    padding-bottom: 2px;
+  }
+  p { margin: 0 0 3px; }
+  ul { margin: 2px 0 0; padding-left: 14px; }
+  li { margin-bottom: 1.5px; }
+  .job { margin-bottom: 4px; }
+  .job-head { display: flex; justify-content: space-between; gap: 8px; }
+  .job-title { font-weight: bold; color: #0b3d38; }
+  .job-meta { color: #52606d; white-space: nowrap; font-size: 8.5pt; }
+  .skills { display: grid; grid-template-columns: 30mm 1fr; row-gap: 2px; }
+  .skills dt { font-weight: bold; color: #0b3d38; white-space: nowrap; }
+  .skills dd { margin: 0; }
+  .project { margin-bottom: 3px; }
+  .oss { margin: 0; padding-left: 12px; font-size: 8.1pt; line-height: 1.2; }
+  .oss li { margin-bottom: 0; }
+  .project-name { font-weight: bold; color: #0b3d38; }
+  .stack { color: #00796b; font-size: 8.4pt; }
+  .tag { color: #52606d; font-style: italic; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header>
+    <h1>Jesús Enrique Hernández Herrera</h1>
+    <div class="role">Full-Stack Developer · TypeScript &amp; Python · Cloud &amp; AI</div>
+    <div class="contact">
+      <span><a href="mailto:jesush1236@gmail.com">jesush1236@gmail.com</a></span>
+      <span><a href="https://github.com/JEHH97">github.com/JEHH97</a></span>
+      <span><a href="https://jehh97.github.io">jehh97.github.io</a></span>
+      <span>Ciudad del Carmen, México</span>
+      <span>Abierto a remoto</span>
+    </div>
+  </header>
+
+  <h2>Perfil</h2>
+  <p>Full-Stack Developer e Ingeniero en Mecatrónica con ~3 años de experiencia en ingeniería (desde diciembre de 2023). En Viasat desarrollo servicios de producción en Python y TypeScript, herramientas de escritorio, pipelines de CI/CD y despliegues en AWS. Tengo experiencia en visión por computadora e integraciones de IA generativa (Gemini, Vertex AI, MCP), y una cultura de pruebas sólida. Busco roles Full-Stack.</p>
+
+  <h2>Habilidades</h2>
+  <dl class="skills">
+    <dt>Frontend</dt><dd>TypeScript, JavaScript, React, React Native, Expo, Next.js, Electron, Tailwind CSS, Vite</dd>
+    <dt>Backend</dt><dd>Python, FastAPI, Node.js, NestJS, Go, Fastify, Express, APIs REST, Pydantic, Zod, SQL</dd>
+    <dt>Datos y colas</dt><dd>PostgreSQL, Prisma, Drizzle, Redis, BullMQ</dd>
+    <dt>Cloud y DevOps</dt><dd>AWS (Lambda, S3, EC2), Docker, GitHub Actions, GitLab CI, Linux, Bash</dd>
+    <dt>IA y visión</dt><dd>Google Gemini, Vertex AI, Model Context Protocol (MCP), OpenCV, NumPy</dd>
+    <dt>Pruebas</dt><dd>Pytest, Vitest, Jest, Playwright, Postman; pruebas unitarias, de integración, de contrato y E2E</dd>
+    <dt>Arquitectura</dt><dd>Hexagonal, en capas, contratos tipados</dd>
+  </dl>
+
+  <h2>Experiencia</h2>
+  <div class="job">
+    <div class="job-head"><span class="job-title">Software Engineer — Viasat Inc.</span><span class="job-meta">ago. 2025 – presente</span></div>
+    <ul>
+      <li>Desarrollo de servicios Python y herramientas de ingeniería en producción sobre Linux, para un ecosistema de satélites y antenas.</li>
+      <li>Entornos de desarrollo, pruebas y simulación con Docker; pipelines en GitHub Actions y GitLab CI.</li>
+      <li>Migración de servicios de ingeniería de entornos locales a AWS (EC2, S3, Lambda), con despliegues automatizados en GitHub Actions que redujeron costos de infraestructura y aceleraron las releases.</li>
+      <li>Infraestructura de pruebas con Pytest y Vitest (más de 60 archivos de prueba).</li>
+      <li>Integraciones con Gemini y Vertex AI, y automatización asistida por IA para pruebas, clasificación y depuración.</li>
+      <li>Resolución de problemas multicapa: TCP/IP, UDP, HTTP/S, DNS, DHCP y multicast.</li>
+    </ul>
+  </div>
+  <div class="job">
+    <div class="job-head"><span class="job-title">Instrumentation &amp; Systems Specialist A — PYPSA (Grupo Planeación y Proyectos)</span><span class="job-meta">nov. 2024 – may. 2025</span></div>
+    <p>Especificaciones técnicas, planes de pruebas y puesta en marcha, y FAT/SAT para sistemas de control industrial y generación de energía.</p>
+  </div>
+  <div class="job">
+    <div class="job-head"><span class="job-title">Instrumentación y Control, Especialista Jr. — Protexa (División Energía)</span><span class="job-meta">dic. 2023 – oct. 2024</span></div>
+    <p>Integración de sistemas, documentación de ingeniería y validación de modelos BIM/3D (AutoCAD Plant 3D, Navisworks).</p>
+  </div>
+  <div class="job">
+    <div class="job-head"><span class="job-title">Técnico en Electrónica y Redes — Multiservicios Técnicos del Sureste</span><span class="job-meta">feb. 2021 – feb. 2022</span></div>
+    <p>Diagnóstico de hardware y sistemas operativos en 15+ equipos diarios; cableado de redes y armado de racks.</p>
+  </div>
+
+  <h2>Proyectos destacados <span class="tag">(profesionales – código privado)</span></h2>
+  <div class="project">
+    <div><span class="project-name">Servicio de análisis de obstrucción del cielo por visión por computadora</span></div>
+    <div class="stack">Python, FastAPI, OpenCV, NumPy, Docker, AWS Lambda/S3/EC2, Gemini, Vertex AI</div>
+    <p>Pipeline adaptativo de 13 pasos (Canny adaptativo, GMM, GrabCut) con ponderación por ángulo sólido esférico para medir la obstrucción del cielo en panorámicas de 360° de sitios de antenas. Clasificación de obstrucción con Gemini y planos con Vertex AI Imagen, con reintentos y degradación controlada. Suite de 29 archivos Pytest; desplegado en AWS con GitHub Actions.</p>
+  </div>
+  <div class="project">
+    <div><span class="project-name">Servidor MCP para agentes de IA en operaciones de red</span></div>
+    <div class="stack">TypeScript, Node.js, MCP SDK, Fastify, Zod, Vitest</div>
+    <p>15 herramientas sobre stdio y Streamable HTTP; operaciones en lista blanca, límites de tasa por API, redacción de secretos y aprobación humana para acciones sobre dispositivos. ~38 archivos de prueba Vitest.</p>
+  </div>
+  <div class="project">
+    <div><span class="project-name">Kit de campo para cámara 360° (CLI + escritorio)</span></div>
+    <div class="stack">TypeScript, Electron, React, Tailwind CSS, Vitest</div>
+    <p>Monorepo de npm workspaces con núcleo hexagonal; IPC tipado; configuración guiada de cámara y descarga de relevamientos con reintentos automáticos y progreso en vivo; modo simulado; ejecutables portables para Windows. 32 archivos de prueba Vitest.</p>
+  </div>
+
+  <h2>Proyectos open source</h2>
+  <ul class="oss">
+    <li><b>Flowboard</b>: Kanban colaborativo en tiempo real (Next.js, Fastify, WebSockets, PostgreSQL, Drizzle) · <a href="https://github.com/JEHH97/flowboard">github.com/JEHH97/flowboard</a></li>
+    <li><b>mcp-mx-economy</b>: servidor MCP de indicadores de Banxico e INEGI (TypeScript, Zod) · <a href="https://github.com/JEHH97/mcp-mx-economy">github.com/JEHH97/mcp-mx-economy</a></li>
+    <li><b>DocScan API</b>: escáner y OCR asíncrono (FastAPI, Redis/RQ, OpenCV, Tesseract, S3) · <a href="https://github.com/JEHH97/docscan-api">github.com/JEHH97/docscan-api</a></li>
+    <li><b>DocScan Mobile</b>: app Expo/React Native de escaneo (TanStack Query, Zod, Jest) · <a href="https://github.com/JEHH97/docscan-mobile">github.com/JEHH97/docscan-mobile</a></li>
+    <li><b>Checkout Service</b>: pedidos y pagos (NestJS, Prisma, Stripe en modo prueba, BullMQ) · <a href="https://github.com/JEHH97/checkout-service">github.com/JEHH97/checkout-service</a></li>
+    <li><b>Go Shortener</b>: acortador de URLs (Go, chi, Redis, PostgreSQL, Prometheus/Grafana) · <a href="https://github.com/JEHH97/go-shortener">github.com/JEHH97/go-shortener</a></li>
+  </ul>
+
+  <div class="two">
+    <div>
+      <h2>Formación</h2>
+      <p><b>Ingeniería en Mecatrónica (B.S.)</b><br>Universidad Autónoma del Carmen (UNACAR), 2015 – 2023</p>
+    </div>
+    <div>
+      <h2>Certificaciones</h2>
+      <p>Auditor Interno de Calidad certificado, ISO 9001:2015</p>
+    </div>
+  </div>
+  <h2>Idiomas</h2>
+  <p><b>Español:</b> nativo &nbsp;·&nbsp; <b>Inglés:</b> dominio profesional de trabajo (3.er lugar, British English Olympics)</p>
+</div>
+
+</body>
+</html>

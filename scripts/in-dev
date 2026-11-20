@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Runs a command inside the Node 24 container as the invoking host user, so files
+# written to the bind-mounted project (node_modules, .next, out, lockfiles) stay
+# owned by you. HOME=/tmp gives npm a writable cache directory.
+#
+# Alternative: Node 24 + npm can also be run directly on the host (plain `npm ci`).
+set -euo pipefail
+
+if ! command -v docker >/dev/null 2>&1; then
+  echo "Docker is required to run the project toolchain." >&2
+  exit 1
+fi
+
+docker_args=(
+  run --rm
+  --user "$(id -u):$(id -g)"
+  -e HOME=/tmp
+  -e PORTFOLIO_SKIP_CV_SCAN
+  -e GIT_CONFIG_COUNT=1 -e GIT_CONFIG_KEY_0=safe.directory -e GIT_CONFIG_VALUE_0=/workspace
+  -v "$PWD:/workspace" -w /workspace
+)
+if [[ "${PORTFOLIO_MASK_CV:-0}" == "1" ]]; then
+  docker_args+=(--tmpfs /workspace/public/cv:rw)
+fi
+docker "${docker_args[@]}" node:24 "$@"

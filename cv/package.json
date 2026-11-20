@@ -1,0 +1,13 @@
+{
+  "name": "jehh-cv-build",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Builds the bilingual Full-Stack Developer résumé PDFs (ES/EN) into ../public/cv",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.0.0"
+  }
+}

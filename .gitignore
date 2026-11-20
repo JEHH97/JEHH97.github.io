@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+cv/node_modules/
+
+# Build output
+.next/
+out/
+*.tsbuildinfo
+# next-env.d.ts is intentionally tracked (Next.js convention).
+
+# Environment files (may contain secrets)
+.env*
+
+# Workflow / planning documents (not published)
+specs/
+
+# Tooling and local artifacts
+graphify-out/
+coverage/
+*.log
+.DS_Store
+cv/.tmp-chrome/
+.preview/

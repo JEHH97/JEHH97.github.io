@@ -1,0 +1,45 @@
+{
+  "name": "jehh97-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "serve out",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "scan": "node scripts/scan-forbidden.mjs",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run scan"
+  },
+  "dependencies": {
+    "geist": "^1.4.2",
+    "next": "latest",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.13.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.19.0",
+    "eslint-config-next": "latest",
+    "jsdom": "^26.0.0",
+    "pdf-parse": "^2.4.5",
+    "serve": "^14.2.4",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.7.3",
+    "vitest": "^4.1.12"
+  },
+  "description": "A bilingual, static portfolio for software engineering work, built with Next.js, React, TypeScript, and Tailwind CSS. The site is exported as static files for GitHub Pages and includes Spanish and English pages.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
