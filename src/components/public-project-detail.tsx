@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PublicProjectDemoLink } from "@/components/public-project-demo-link";
 import type { PublicProject } from "@/content/projects";
 import type { Dictionary, Locale } from "@/i18n";
 
@@ -9,7 +10,7 @@ export function PublicProjectDetail({ project, locale, dictionary }: { project: 
     <>
       <div className="public-detail-actions">
         <a className="button button-primary" href={project.repoUrl} target="_blank" rel="noreferrer">{copy.viewCode} ↗</a>
-        {project.demoUrl ? <a className="button button-secondary" href={project.demoUrl} target="_blank" rel="noreferrer">{copy.demo} ↗</a> : null}
+        <PublicProjectDemoLink project={project} locale={locale} dictionary={dictionary} variant="detail" />
       </div>
       {project.image ? <figure className="detail-screenshot"><Image src={project.image.src} alt={project.image.alt[locale]} width={project.image.width} height={project.image.height} sizes="(max-width: 760px) 100vw, 900px" /><figcaption>{project.image.kind === "diagram" ? copy.architecture : copy.image}: {project.image.alt[locale]}</figcaption></figure> : null}
       <div className="detail-grid">

@@ -124,6 +124,8 @@ h1 { max-width: 760px; margin-bottom: 1.3rem; font-size: clamp(2.7rem, 5.4vw, 5r
 .public-card h3 a { text-decoration: none; }
 .public-card .tag-list { margin-top: auto; }
 .public-card .footer-links { margin-top: 0; }
+.demo-link-group { display: flex; flex-direction: column; align-items: flex-start; gap: .2rem; }
+.demo-note { margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.4; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .about-copy { max-width: 600px; color: var(--muted); font-size: 1.08rem; }
 .education-card { padding: 1.5rem; border: 1px solid var(--line); border-radius: .9rem; background: var(--surface); }

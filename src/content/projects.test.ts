@@ -35,6 +35,28 @@ describe("public open-source projects", () => {
   it("keeps demo links empty so the demo button stays hidden", () => {
     for (const project of publicProjects) {
       expect(project.demoUrl).toBe("");
+      expect(["live", "api", "npm"]).toContain(project.demoKind);
+      if (project.demoUrl) {
+        expect(new URL(project.demoUrl).protocol).toBe("https:");
+        expect(project.demoKind).toBeTruthy();
+      }
+    }
+  });
+
+  it("assigns the approved demo type and cold-start note to each project", () => {
+    expect(Object.fromEntries(publicProjects.map(({ slug, demoKind }) => [slug, demoKind]))).toEqual({
+      flowboard: "live",
+      "mcp-mx-economy": "npm",
+      "docscan-api": "api",
+      "docscan-mobile": "live",
+      "checkout-service": "api",
+      "go-shortener": "live",
+    });
+
+    const coldStartProjects = publicProjects.filter((project) => project.demoNote);
+    expect(coldStartProjects.map(({ slug }) => slug)).toEqual(["flowboard", "docscan-api", "checkout-service", "go-shortener"]);
+    for (const project of coldStartProjects) {
+      expect(project.demoNote).toEqual({ es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" });
     }
   });
 

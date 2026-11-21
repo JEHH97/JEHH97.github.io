@@ -35,7 +35,7 @@ const es = {
     caseNotice: "Proyecto profesional — código privado bajo acuerdo de confidencialidad",
   },
   project: { problem: "Contexto y problema", role: "Mi rol", architecture: "Arquitectura", decisions: "Decisiones técnicas", results: "Resultados y aspectos destacados", notice: "Proyecto profesional — código privado bajo acuerdo de confidencialidad" },
-  publicProject: { label: "Proyecto open source", viewCode: "Ver código en GitHub", problem: "Problema", features: "Qué construí", architecture: "Arquitectura", decisions: "Decisiones técnicas", quality: "Calidad y pruebas", localRun: "Cómo ejecutarlo localmente", demo: "Ver demo", image: "Captura del proyecto", previous: "Proyecto anterior", next: "Siguiente proyecto" },
+  publicProject: { label: "Proyecto open source", viewCode: "Ver código en GitHub", problem: "Problema", features: "Qué construí", architecture: "Arquitectura", decisions: "Decisiones técnicas", quality: "Calidad y pruebas", localRun: "Cómo ejecutarlo localmente", demo: "Ver demo", demoKinds: { live: "Demo en vivo", api: "Documentación de la API", npm: "npm" }, image: "Captura del proyecto", previous: "Proyecto anterior", next: "Siguiente proyecto" },
   notFound: { title: "Página no encontrada", body: "No encontramos la página que buscas.", home: "Volver al inicio" },
   footer: { made: "Diseñado y desarrollado con cuidado", rights: "Todos los derechos reservados." },
 } as const;

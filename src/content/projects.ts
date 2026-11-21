@@ -173,7 +173,10 @@ export type PublicProject = {
   description: BilingualText;
   stack: readonly string[];
   repoUrl: string;
+  // Lead: paste each deployed HTTPS URL into its project's demoUrl below; keep these blank until then.
   demoUrl: string;
+  demoKind?: "live" | "api" | "npm";
+  demoNote?: BilingualText;
   image?: {
     src: string;
     width: number;
@@ -202,6 +205,8 @@ export const publicProjects: readonly PublicProject[] = [
     stack: ["Next.js", "Fastify", "WebSockets", "PostgreSQL", "Drizzle", "Zod", "dnd-kit", "Playwright"],
     repoUrl: "https://github.com/JEHH97/flowboard",
     demoUrl: "",
+    demoKind: "live",
+    demoNote: { es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" },
     image: {
       src: "/projects/flowboard.webp",
       width: 1200,
@@ -243,6 +248,7 @@ export const publicProjects: readonly PublicProject[] = [
     stack: ["TypeScript", "Node.js", "MCP SDK", "Zod", "Banxico SIE", "INEGI API", "Vitest"],
     repoUrl: "https://github.com/JEHH97/mcp-mx-economy",
     demoUrl: "",
+    demoKind: "npm",
     image: {
       src: "/projects/mcp-mx-economy.webp",
       width: 1200,
@@ -285,6 +291,8 @@ export const publicProjects: readonly PublicProject[] = [
     stack: ["Python", "FastAPI", "Redis / RQ", "OpenCV", "Tesseract", "S3", "Pydantic", "Docker", "pytest"],
     repoUrl: "https://github.com/JEHH97/docscan-api",
     demoUrl: "",
+    demoKind: "api",
+    demoNote: { es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" },
     image: {
       src: "/projects/docscan-api.webp",
       width: 1200,
@@ -330,6 +338,7 @@ export const publicProjects: readonly PublicProject[] = [
     stack: ["React Native", "Expo", "TypeScript", "TanStack Query", "Zod", "Jest"],
     repoUrl: "https://github.com/JEHH97/docscan-mobile",
     demoUrl: "",
+    demoKind: "live",
     image: {
       src: "/projects/docscan-mobile.webp",
       width: 430,
@@ -372,6 +381,8 @@ export const publicProjects: readonly PublicProject[] = [
     stack: ["NestJS", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Stripe", "Jest"],
     repoUrl: "https://github.com/JEHH97/checkout-service",
     demoUrl: "",
+    demoKind: "api",
+    demoNote: { es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" },
     image: {
       src: "/projects/checkout-service.webp",
       width: 1200,
@@ -415,6 +426,8 @@ export const publicProjects: readonly PublicProject[] = [
     stack: ["Go", "chi", "PostgreSQL", "Redis", "Prometheus", "Grafana", "Docker"],
     repoUrl: "https://github.com/JEHH97/go-shortener",
     demoUrl: "",
+    demoKind: "live",
+    demoNote: { es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" },
     image: {
       src: "/projects/go-shortener.webp",
       width: 1200,

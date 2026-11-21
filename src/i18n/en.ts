@@ -35,7 +35,7 @@ const en = {
     caseNotice: "Professional project — source code private under NDA",
   },
   project: { problem: "Context & problem", role: "My role", architecture: "Architecture", decisions: "Key technical decisions", results: "Results & highlights", notice: "Professional project — source code private under NDA" },
-  publicProject: { label: "Open-source project", viewCode: "View code on GitHub", problem: "Problem", features: "What I built", architecture: "Architecture", decisions: "Key technical decisions", quality: "Quality & tests", localRun: "How to run locally", demo: "View demo", image: "Project screenshot", previous: "Previous project", next: "Next project" },
+  publicProject: { label: "Open-source project", viewCode: "View code on GitHub", problem: "Problem", features: "What I built", architecture: "Architecture", decisions: "Key technical decisions", quality: "Quality & tests", localRun: "How to run locally", demo: "View demo", demoKinds: { live: "Live demo", api: "API docs", npm: "npm" }, image: "Project screenshot", previous: "Previous project", next: "Next project" },
   notFound: { title: "Page not found", body: "We couldn't find the page you're looking for.", home: "Return home" },
   footer: { made: "Designed and built with care", rights: "All rights reserved." },
 } as const;

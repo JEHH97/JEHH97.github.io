@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PublicProjectDemoLink } from "@/components/public-project-demo-link";
 import type { PublicProject } from "@/content/projects";
 import type { Dictionary, Locale } from "@/i18n";
 
@@ -14,7 +15,7 @@ export function PublicProjectCard({ project, locale, dictionary }: { project: Pu
     <ul className="tag-list" aria-label={dictionary.common.stack}>{project.stack.map((item) => <li key={item}>{item}</li>)}</ul>
     <div className="footer-links">
       <a href={project.repoUrl} target="_blank" rel="noreferrer">{text.repository} ↗</a>
-      {project.demoUrl ? <a href={project.demoUrl} target="_blank" rel="noreferrer">{text.demo} ↗</a> : null}
+      <PublicProjectDemoLink project={project} locale={locale} dictionary={dictionary} variant="card" />
       <Link href={`/${locale}/projects/${project.slug}/`}>{text.viewDetails} →</Link>
     </div>
   </article>;

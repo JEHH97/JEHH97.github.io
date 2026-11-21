@@ -8,7 +8,7 @@ import { PublicProjectDetail } from "./public-project-detail";
 import { ProjectsShowcase } from "./projects-showcase";
 import { SiteHeader } from "./site-header";
 import { SiteFooter } from "./site-footer";
-import { caseStudies, publicProjects } from "@/content/projects";
+import { caseStudies, publicProjects, type PublicProject } from "@/content/projects";
 import { getDictionary } from "@/i18n";
 import { site } from "@/config/site";
 
@@ -16,6 +16,13 @@ vi.mock("next/link", () => ({ default: ({ href, children, ...props }: React.Anch
 vi.mock("next/navigation", () => ({ usePathname: () => "/es/projects/vision-obstruction-analysis/" }));
 
 describe("portfolio components", () => {
+  const withDemo = (kind: NonNullable<PublicProject["demoKind"]>): PublicProject => ({
+    ...publicProjects[0],
+    demoUrl: "https://demo.example.test",
+    demoKind: kind,
+    demoNote: { es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" },
+  });
+
   it("renders the localized hero and primary actions", () => {
     render(<Hero locale="es" dictionary={getDictionary("es")} />);
     expect(screen.getByRole("heading", { level: 1, name: /Full-Stack Developer/ })).toBeInTheDocument();
@@ -41,6 +48,34 @@ describe("portfolio components", () => {
     expect(screen.queryByRole("link", { name: /Demo/ })).not.toBeInTheDocument();
     expect(screen.getByRole("img", { name: project.image?.alt.es })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Ver detalles/ })).toHaveAttribute("href", "/es/projects/flowboard/");
+  });
+
+  it.each([
+    ["es", "live", "Demo en vivo"],
+    ["es", "api", "Documentación de la API"],
+    ["es", "npm", "npm"],
+    ["en", "live", "Live demo"],
+    ["en", "api", "API docs"],
+    ["en", "npm", "npm"],
+  ] as const)("shows the %s %s demo label, note, and safe external link in card and detail", (locale, kind, label) => {
+    const project = withDemo(kind);
+    const dictionary = getDictionary(locale);
+    const note = project.demoNote![locale];
+    const assertDemoLink = () => {
+      const link = screen.getByRole("link", { name: `${label} ↗` });
+      expect(link).toHaveAttribute("href", project.demoUrl);
+      expect(link).toHaveAttribute("target", "_blank");
+      expect(link).toHaveAttribute("rel", "noreferrer");
+      expect(link).toHaveAttribute("aria-describedby", `demo-note-${project.slug}-${locale}`);
+      expect(screen.getByText(note)).toBeVisible();
+    };
+
+    const card = render(<PublicProjectCard project={project} locale={locale} dictionary={dictionary} />);
+    assertDemoLink();
+    card.unmount();
+
+    render(<PublicProjectDetail project={project} locale={locale} dictionary={dictionary} />);
+    assertDemoLink();
   });
 
   it("links the compact navigation to the open-source subsection", () => {
