@@ -33,7 +33,7 @@
     "pdf-parse": "^2.4.5",
     "serve": "^14.2.4",
     "tailwindcss": "^4.1.0",
-    "typescript": "^5.7.3",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.12"
   },
   "description": "A bilingual, static portfolio for software engineering work, built with Next.js, React, TypeScript, and Tailwind CSS. The site is exported as static files for GitHub Pages and includes Spanish and English pages.",
