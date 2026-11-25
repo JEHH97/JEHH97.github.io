@@ -41,13 +41,14 @@ describe("portfolio components", () => {
   });
 
   it("renders an open-source card with GitHub link and no demo link when demoUrl is empty", () => {
-    const project = publicProjects[0];
+    const project = publicProjects.find((item) => item.slug === "mcp-mx-economy")!;
+    expect(project.demoUrl).toBe("");
     render(<PublicProjectCard project={project} locale="es" dictionary={getDictionary("es")} />);
     expect(screen.getByRole("heading", { name: project.title.es })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /GitHub/ })).toHaveAttribute("href", project.repoUrl);
     expect(screen.queryByRole("link", { name: /Demo/ })).not.toBeInTheDocument();
     expect(screen.getByRole("img", { name: project.image?.alt.es })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Ver detalles/ })).toHaveAttribute("href", "/es/projects/flowboard/");
+    expect(screen.getByRole("link", { name: /Ver detalles/ })).toHaveAttribute("href", `/es/projects/${project.slug}/`);
   });
 
   it.each([
@@ -93,7 +94,8 @@ describe("portfolio components", () => {
   });
 
   it("renders the GitHub code action and hides an empty demo action on detail pages", () => {
-    const project = publicProjects[0];
+    const project = publicProjects.find((item) => item.slug === "mcp-mx-economy")!;
+    expect(project.demoUrl).toBe("");
     render(<PublicProjectDetail project={project} locale="en" dictionary={getDictionary("en")} />);
     expect(screen.getByRole("link", { name: /View code on GitHub/ })).toHaveAttribute("href", project.repoUrl);
     expect(screen.queryByRole("link", { name: /View demo/ })).not.toBeInTheDocument();

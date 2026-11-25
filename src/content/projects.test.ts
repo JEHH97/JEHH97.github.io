@@ -32,15 +32,17 @@ describe("public open-source projects", () => {
     }
   });
 
-  it("keeps demo links empty so the demo button stays hidden", () => {
+  it("validates demo links: HTTPS URL with a demo kind when set, empty otherwise", () => {
     for (const project of publicProjects) {
-      expect(project.demoUrl).toBe("");
       expect(["live", "api", "npm"]).toContain(project.demoKind);
       if (project.demoUrl) {
         expect(new URL(project.demoUrl).protocol).toBe("https:");
+        expect(project.demoUrl.startsWith("https://")).toBe(true);
         expect(project.demoKind).toBeTruthy();
       }
     }
+    // npm package only: no hosted demo URL yet.
+    expect(publicProjects.find((project) => project.slug === "mcp-mx-economy")?.demoUrl).toBe("");
   });
 
   it("assigns the approved demo type and cold-start note to each project", () => {
