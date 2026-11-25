@@ -173,7 +173,7 @@ export type PublicProject = {
   description: BilingualText;
   stack: readonly string[];
   repoUrl: string;
-  // Lead: paste each deployed HTTPS URL into its project's demoUrl below; keep these blank until then.
+  // Deployed HTTPS URLs; empty hides the button.
   demoUrl: string;
   demoKind?: "live" | "api" | "npm";
   demoNote?: BilingualText;
@@ -204,7 +204,7 @@ export const publicProjects: readonly PublicProject[] = [
     },
     stack: ["Next.js", "Fastify", "WebSockets", "PostgreSQL", "Drizzle", "Zod", "dnd-kit", "Playwright"],
     repoUrl: "https://github.com/JEHH97/flowboard",
-    demoUrl: "",
+    demoUrl: "https://flowboard.tchx.dev",
     demoKind: "live",
     demoNote: { es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" },
     image: {
@@ -290,7 +290,7 @@ export const publicProjects: readonly PublicProject[] = [
     },
     stack: ["Python", "FastAPI", "Redis / RQ", "OpenCV", "Tesseract", "S3", "Pydantic", "Docker", "pytest"],
     repoUrl: "https://github.com/JEHH97/docscan-api",
-    demoUrl: "",
+    demoUrl: "https://docscan-api.tchx.dev",
     demoKind: "api",
     demoNote: { es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" },
     image: {
@@ -337,7 +337,7 @@ export const publicProjects: readonly PublicProject[] = [
     },
     stack: ["React Native", "Expo", "TypeScript", "TanStack Query", "Zod", "Jest"],
     repoUrl: "https://github.com/JEHH97/docscan-mobile",
-    demoUrl: "",
+    demoUrl: "https://docscan.tchx.dev",
     demoKind: "live",
     image: {
       src: "/projects/docscan-mobile.webp",
@@ -380,7 +380,7 @@ export const publicProjects: readonly PublicProject[] = [
     },
     stack: ["NestJS", "TypeScript", "PostgreSQL", "Prisma", "Redis", "BullMQ", "Stripe", "Jest"],
     repoUrl: "https://github.com/JEHH97/checkout-service",
-    demoUrl: "",
+    demoUrl: "https://checkout.tchx.dev",
     demoKind: "api",
     demoNote: { es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" },
     image: {
@@ -425,7 +425,7 @@ export const publicProjects: readonly PublicProject[] = [
     },
     stack: ["Go", "chi", "PostgreSQL", "Redis", "Prometheus", "Grafana", "Docker"],
     repoUrl: "https://github.com/JEHH97/go-shortener",
-    demoUrl: "",
+    demoUrl: "https://go.tchx.dev",
     demoKind: "live",
     demoNote: { es: "Puede tardar ~50 s en despertar", en: "May take ~50 s to wake up" },
     image: {
